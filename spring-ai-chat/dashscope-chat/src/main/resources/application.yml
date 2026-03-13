@@ -6,7 +6,7 @@ spring:
     name: spring-ai-alibaba-dashscope-chat
   ai:
     dashscope:
-      api-key: sk-5fe2997e181e432297756487354b3798
+      api-key: ${DASHSCOPE_API_KEY}
 
 # enabled debug log out.
 logging:
