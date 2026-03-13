@@ -4,12 +4,16 @@ import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
 import com.alibaba.cloud.ai.dashscope.chat.MessageFormat;
 import com.alibaba.cloud.ai.dashscope.common.DashScopeApiConstants;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.content.Media;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.util.MimeTypeUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +22,7 @@ import reactor.core.publisher.Flux;
 import java.net.URI;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/client")
 public class DashScopeChatClientController {
@@ -25,6 +30,12 @@ public class DashScopeChatClientController {
     private static final String DEFAULT_PROMPT = "你好，介绍下你自己！";
 
     private final ChatClient dashScopeChatClient;
+
+    @Value("${DASHSCOPE_API_KEY}")
+    private String valueEnv;
+
+    @Autowired
+    private Environment environment;
 
     public DashScopeChatClientController(ChatModel chatModel) {
 
@@ -55,7 +66,12 @@ public class DashScopeChatClientController {
      */
     @GetMapping("/simple/chat")
     public String simpleChat() {
-
+        String value_1 = System.getenv("DASHSCOPE_API_KEY");
+        log.debug("System.getenv: " + value_1);
+        String value_2 = environment.getProperty("DASHSCOPE_API_KEY");
+        log.debug("Environment.getProperty: " + value_2);
+        String value_3 = valueEnv;
+        log.debug("@Value: " + value_3);
         return dashScopeChatClient.prompt(DEFAULT_PROMPT).call().content();
     }
 
