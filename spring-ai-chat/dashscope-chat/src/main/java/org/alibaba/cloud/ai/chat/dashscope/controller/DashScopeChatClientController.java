@@ -24,7 +24,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/dashscope/client")
 public class DashScopeChatClientController {
 
     private static final String DEFAULT_PROMPT = "你好，介绍下你自己！";

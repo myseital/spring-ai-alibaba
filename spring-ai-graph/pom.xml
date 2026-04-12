@@ -11,14 +11,11 @@
     </parent>
 
     <version>${revision}</version>
-    <modules>
-        <module>dashscope-chat</module>
-        <module>openai-chat</module>
-    </modules>
-    <artifactId>spring-ai-chat</artifactId>
+
+    <artifactId>spring-ai-graph</artifactId>
     <packaging>pom</packaging>
 
-    <description>Spring AI Alibaba Chat Example</description>
-    <name>Spring AI Alibaba Chat Examples</name>
+    <description>Spring AI Alibaba Graph Example</description>
+    <name>Spring AI Alibaba Graph Examples</name>
 
 </project>

@@ -38,6 +38,7 @@
 
     <modules>
         <module>spring-ai-chat</module>
+        <module>spring-ai-graph</module>
     </modules>
 
     <dependencyManagement>

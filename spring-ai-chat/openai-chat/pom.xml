@@ -11,25 +11,14 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>dashscope-chat</artifactId>
-    <description>Spring AI Alibaba Dashscope Chat Example</description>
-    <name>Spring AI Alibaba Dashscope Chat Examples</name>
+    <artifactId>openai-chat</artifactId>
+    <description>Spring AI Alibaba OpenAI Chat Example</description>
+    <name>Spring AI Alibaba OpenAI Chat Examples</name>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.cloud.ai</groupId>
-            <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.cloud.ai</groupId>
-            <artifactId>spring-ai-alibaba-graph-core</artifactId>
-            <version>${spring-ai-alibaba.version}</version>
         </dependency>
 
         <!-- 自定义 Webclient http client 依赖 -->
@@ -42,6 +31,22 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud.ai</groupId>
+            <artifactId>spring-ai-alibaba-graph-core</artifactId>
+            <version>${spring-ai-alibaba.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-openai</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-autoconfigure-model-chat-client</artifactId>
         </dependency>
     </dependencies>
 
