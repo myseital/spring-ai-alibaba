@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.alibaba.cloud.ai.agent.mapper.BbTransferOrderMapper">
+  <resultMap id="BaseResultMap" type="org.alibaba.cloud.ai.agent.model.BbTransferOrder">
+    <!--@mbg.generated-->
+    <!--@Table bb_transfer_order-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="source_warehouse_id" jdbcType="BIGINT" property="sourceWarehouseId" />
+    <result column="target_warehouse_id" jdbcType="BIGINT" property="targetWarehouseId" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="transfer_type" jdbcType="INTEGER" property="transferType" />
+    <result column="transfer_date" jdbcType="DATE" property="transferDate" />
+    <result column="comment" jdbcType="LONGVARCHAR" property="comment" />
+    <result column="created_by" jdbcType="VARCHAR" property="createdBy" />
+    <result column="approved_by" jdbcType="VARCHAR" property="approvedBy" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, order_no, source_warehouse_id, target_warehouse_id, `status`, transfer_type, 
+    transfer_date, `comment`, created_by, approved_by, created_time, updated_time
+  </sql>
+</mapper>

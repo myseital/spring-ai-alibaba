@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.alibaba.cloud.ai.agent.mapper.BbTransferOrderItemMapper">
+  <resultMap id="BaseResultMap" type="org.alibaba.cloud.ai.agent.model.BbTransferOrderItem">
+    <!--@mbg.generated-->
+    <!--@Table bb_transfer_order_item-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="transfer_order_id" jdbcType="BIGINT" property="transferOrderId" />
+    <result column="product_id" jdbcType="BIGINT" property="productId" />
+    <result column="transfer_quantity" jdbcType="DECIMAL" property="transferQuantity" />
+    <result column="actual_quantity" jdbcType="DECIMAL" property="actualQuantity" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, transfer_order_id, product_id, transfer_quantity, actual_quantity, remark
+  </sql>
+</mapper>

@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  *
  * @author myseital
- * @date 2026/4/13 6:30
+ * @date 2026/4/13
  */
 @Slf4j
 public class TransferEnglishNode implements NodeAction {
@@ -34,7 +34,7 @@ public class TransferEnglishNode implements NodeAction {
         StringBuilder sb = new StringBuilder();
         // 阻塞在这里，收集LLM流式输出的内容放到sb中
         content.doOnNext(sb::append).blockLast();
-        log.info("English={}", sb.toString());
+        log.info("English={}", sb);
 
         return Map.of("English", sb.toString());
     }

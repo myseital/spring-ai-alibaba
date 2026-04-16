@@ -24,11 +24,20 @@
         <spring-ai.version>1.1.0</spring-ai.version>
         <!-- Spring Boot -->
         <spring-boot.version>3.5.7</spring-boot.version>
+        <!-- Spring Cloud -->
+        <spring-cloud.version>2025.0.2</spring-cloud.version>
 
         <!-- Spring AI Alibaba -->
         <!-- Install Spring AI Alibaba in your local. -->
         <spring-ai-alibaba.version>1.1.0.0</spring-ai-alibaba.version>
         <spring-ai-alibaba-extensions.version>1.1.2.1</spring-ai-alibaba-extensions.version>
+        <!-- Spring Cloud Alibaba-->
+        <spring-cloud-alibaba.version>2025.0.0.0</spring-cloud-alibaba.version>
+
+        <hutool-all.version>5.8.23</hutool-all.version>
+        <mapstruct.version>1.6.2</mapstruct.version>
+        <lombok.version>1.18.42</lombok.version>
+        <plantuml.version>1.2024.4</plantuml.version>
 
         <!-- maven plugin -->
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
@@ -39,6 +48,8 @@
     <modules>
         <module>spring-ai-chat</module>
         <module>spring-ai-graph</module>
+        <module>spring-ai-agent</module>
+        <module>common</module>
     </modules>
 
     <dependencyManagement>
@@ -58,6 +69,13 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
                 <groupId>com.alibaba.cloud.ai</groupId>
                 <artifactId>spring-ai-alibaba-bom</artifactId>
                 <version>${spring-ai-alibaba.version}</version>
@@ -70,6 +88,36 @@
                 <version>${spring-ai-alibaba-extensions.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sourceforge.plantuml</groupId>
+                <artifactId>plantuml-mit</artifactId>
+                <version>${plantuml.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -98,6 +146,18 @@
                     <compilerArgs>
                         <compilerArg>-parameters</compilerArg>
                     </compilerArgs>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>

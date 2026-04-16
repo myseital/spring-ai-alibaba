@@ -19,7 +19,7 @@ import static com.alibaba.cloud.ai.graph.action.AsyncNodeAction.node_async;
 /**
  *
  * @author myseital
- * @date 2026/4/13 5:56
+ * @date 2026/4/13
  */
 @Configuration
 public class TestGraphConfig {

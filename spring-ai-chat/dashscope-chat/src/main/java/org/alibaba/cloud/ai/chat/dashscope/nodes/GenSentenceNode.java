@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  *
  * @author myseital
- * @date 2026/4/13 6:09
+ * @date 2026/4/13
  */
 @Slf4j
 public class GenSentenceNode implements NodeAction {
@@ -34,7 +34,7 @@ public class GenSentenceNode implements NodeAction {
                 .stream().content();
         StringBuilder sb = new StringBuilder();
         content.doOnNext(sb::append).blockLast();
-        log.info("sentence={}", sb.toString());
+        log.info("sentence={}", sb);
 
         return Map.of("sentence", sb.toString());
     }

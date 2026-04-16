@@ -3,6 +3,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 .kotlin
+./logs
+./.temp
 
 ### IntelliJ IDEA ###
 .idea/*
@@ -39,3 +41,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+**/env.yml
+**/env.properties
+**/.env

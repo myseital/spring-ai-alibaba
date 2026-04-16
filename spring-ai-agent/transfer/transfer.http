@@ -1,0 +1,20 @@
+#
+GET http://localhost:19000/saleProduct/sale?productId=1
+
+###
+
+# 测试nacos配置中心
+GET http://localhost:19000/testNacos
+
+###
+
+#
+POST http://localhost:19000/saleProduct/sale
+Content-Type: application/json
+
+{
+  "warehouseId": 1,
+  "productId": 1,
+  "saleDate": "2026-04-16",
+  "quantity": 1
+}

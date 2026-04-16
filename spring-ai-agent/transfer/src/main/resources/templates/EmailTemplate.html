@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI智能库存调拨单通知</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .content {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid #eaeaea;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 0 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .adopt-button {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .reject-button {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .transfer-info {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>AI智能库存调拨单通知</h1>
+</div>
+
+<div class="content">
+    <p>尊敬的用户：</p>
+    <p>这是AI智能库存调拨优化系统推送的一份调拨单，请您审核。</p>
+
+    <div class="transfer-info">
+        <p><strong>内容：</strong><span th:text="${inventoryTransferSaveParamStr}"></span></p>
+    </div>
+
+    <p>请点击下方按钮处理此调拨单：</p>
+
+    <div class="button-container">
+        <a th:href="${adoptLink}" class="button adopt-button">采纳</a>
+        <a th:href="${rejectLink}" class="button reject-button">拒绝</a>
+    </div>
+
+    <p>如果您无法点击按钮，请复制以下链接到浏览器中打开：</p>
+    <p>采纳链接：<span th:text="${adoptLink}"></span></p>
+    <p>拒绝链接：<span th:text="${rejectLink}"></span></p>
+
+    <div class="footer">
+        <p>此邮件由AI智能库存调拨优化系统自动发送，请勿回复。</p>
+        <p>如有疑问，请联系系统管理员。</p>
+    </div>
+</div>
+</body>
+</html>
