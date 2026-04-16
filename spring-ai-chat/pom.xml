@@ -10,7 +10,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <version>${revision}</version>
+<!--    <version>${revision}</version>-->
     <modules>
         <module>dashscope-chat</module>
         <module>openai-chat</module>

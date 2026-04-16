@@ -10,9 +10,10 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <version>${revision}</version>
+<!--    <version>${revision}</version>-->
     <modules>
         <module>transfer</module>
+        <module>bi-helper</module>
     </modules>
     <artifactId>spring-ai-agent</artifactId>
     <packaging>pom</packaging>

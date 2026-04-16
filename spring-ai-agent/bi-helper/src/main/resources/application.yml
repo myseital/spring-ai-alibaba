@@ -1,0 +1,19 @@
+server:
+  port: 19001
+
+spring:
+  application:
+    name: agent-bi-helper
+  ai:
+    dashscope:
+      api-key: ${DASHSCOPE_API_KEY}
+      chat:
+        options:
+          model: qwen3-max
+
+logging:
+  file:
+    path: ./logs
+  level:
+    root: info
+    org.alibaba: info

@@ -10,7 +10,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <version>${revision}</version>
+<!--    <version>${revision}</version>-->
 
     <artifactId>spring-ai-graph</artifactId>
     <packaging>pom</packaging>
