@@ -39,6 +39,12 @@
         <lombok.version>1.18.42</lombok.version>
         <plantuml.version>1.2024.4</plantuml.version>
 
+        <mybatis-plus.version>3.5.14</mybatis-plus.version>
+        <!--        <mysql8.version>8.0.32</mysql8.version>-->
+        <mysql.version>9.6.0</mysql.version>
+        <redisson.version>3.23.4</redisson.version>
+        <liteflow.version>2.15.3</liteflow.version>
+
         <!-- maven plugin -->
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
         <flatten-maven-plugin.version>1.3.0</flatten-maven-plugin.version>
@@ -118,6 +124,30 @@
                 <groupId>net.sourceforge.plantuml</groupId>
                 <artifactId>plantuml-mit</artifactId>
                 <version>${plantuml.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yomahub</groupId>
+                <artifactId>liteflow-spring-boot-starter</artifactId>
+                <version>${liteflow.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -4,12 +4,81 @@ server:
 spring:
   application:
     name: agent-bi-helper
+  config:
+    import:
+      - optional:classpath:.env[.properties]
   ai:
     dashscope:
       api-key: ${DASHSCOPE_API_KEY}
+      ### https://dashscope.aliyuncs.com/api/v1/services/aigc/image-generation/generation
+      image:
+        options:
+          base-image-url: https://dashscope.aliyuncs.com/api/v1
+          model: wanx-style-repaint-v1
+        base-url: /services/aigc/image-generation/generation
+        api-key: ${DASHSCOPE_API_KEY}
+    openai:
+      api-key: ${DASHSCOPE_API_KEY}
       chat:
+        base-url: https://dashscope.aliyuncs.com/compatible-mode
+        api-key: ${DASHSCOPE_API_KEY}
         options:
           model: qwen3-max
+          temperature: 0.1
+      embedding:
+        base-url: https://api.siliconflow.cn
+        api-key: ${SILICONFLOW_AGENT_API_KEY}
+        options:
+          model: BAAI/bge-m3
+      image:
+        base-url: https://api.siliconflow.cn
+        images-path: v1/images/generations
+        api-key: ${SILICONFLOW_AGENT_API_KEY}
+        options:
+          model: Kwai-Kolors/Kolors
+
+    vectorstore:
+#      redis:
+#        index-name: bi-helper
+#        prefix: bi-helper-prefix
+#        initialize-schema: true
+      milvus:
+        client:
+          host: localhost
+          port: 19530
+        database-name: default
+        collection-name: bi_helper
+        id-field-name: id
+        auto-id: false
+        initialize-schema: true
+        ## 根据使用的向量大模型设置维度
+        embedding-dimension: 1024
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bi_helper?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: admin
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 2
+      timeout: 5s
+      connect-timeout: 5s
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: ${QQ_MAIL}
+    password: ${QQ_MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+liteflow:
+  rule-source: config/flow.xml
 
 logging:
   file:

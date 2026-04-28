@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow>
+    <chain name="chain1">
+        THEN(
+        genPhoto.data ("生成一个中国古代剑客的照片"),
+        editPhoto.data ("7")
+        );
+
+<!--        THEN(-->
+<!--        genPhoto.data ("生成一个中国古代剑客的照片")-->
+<!--        );-->
+    </chain>
+
+
+</flow>
